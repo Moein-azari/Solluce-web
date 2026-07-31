@@ -56,6 +56,7 @@ ol {
     list-style: none;
 }
 
+
 /* ===================================
    FONT FACES
 =================================== */
@@ -124,7 +125,6 @@ ol {
 :root {
 
     /* Brand Colors */
-
     --primary: #1A4369;
     --secondary: #064530;
     --accent: #E8AB2E;
@@ -133,12 +133,13 @@ ol {
     --surface-primary: #E6EDF5;
 
     --text-primary: #0C1324;
-    --border: #CBD5E1;
+    --border-color: #CBD5E1;
 
     --success: #22C55E;
     --warning: #F59E0B;
     --error: #AB0E0E;
 
+    /* Typography */
     --font-heading: "Sora", sans-serif;
     --font-body: "Geist", sans-serif;
     --font-code: "JetBrains Mono", monospace;
@@ -150,6 +151,7 @@ ol {
     --font-bold: 700;
     --font-extrabold: 800;
 
+    /* Spacing */
     --space-xs: 4px;
     --space-sm: 8px;
     --space-md: 16px;
@@ -157,20 +159,24 @@ ol {
     --space-xl: 32px;
     --space-2xl: 48px;
 
+    /* Radius */
     --radius-xs: 4px;
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 20px;
     --radius-full: 9999px;
 
+    /* Transitions */
     --transition-fast: 150ms ease;
     --transition-normal: 250ms ease;
     --transition-slow: 400ms ease;
 
+    /* Shadows */
     --shadow-sm: 0 2px 4px rgba(0,0,0,.08);
     --shadow-md: 0 8px 24px rgba(0,0,0,.10);
     --shadow-lg: 0 16px 40px rgba(0,0,0,.15);
 
+    /* Layout */
     --container-width: 1200px;
 }
 
@@ -231,22 +237,34 @@ pre {
     margin-inline: auto;
 }
 
+main section {
+    padding-block: var(--space-2xl);
+}
+
 
 /* ===================================
    COMPONENTS
 =================================== */
 
+/* --- Header & Navigation --- */
+
 header {
-    background-color: var(--background-primary);
-    border-bottom: 1px solid var(--border);
+    background-color: var(--surface-primary);
+    border-bottom: 1px solid var(--border-color);
 }
 
 header nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
+    justify-content: space-between;
     min-height: 72px;
+}
+
+header nav > a {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: var(--font-bold);
+    color: var(--primary);
 }
 
 header ul {
@@ -255,18 +273,9 @@ header ul {
     gap: var(--space-xl);
 }
 
-header nav > a {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: var(--font-bold);
-
-    color: var(--primary);
-}
-
 header ul a {
     font-family: var(--font-body);
     font-weight: var(--font-medium);
-
     transition: color var(--transition-fast);
 }
 
@@ -277,6 +286,147 @@ header ul a:hover {
 header a[aria-current="page"] {
     color: var(--primary);
     font-weight: var(--font-semibold);
+}
+
+
+/* --- Hero --- */
+
+.hero {
+    padding-block: 6rem;
+}
+
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: var(--font-extrabold);
+    color: var(--primary);
+}
+
+.hero-tagline {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--secondary);
+}
+
+.hero-description {
+    max-width: 650px;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+
+/* --- Buttons --- */
+
+.button-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.6rem;
+    border-radius: var(--radius-md);
+    background-color: var(--primary);
+    color: var(--background-primary);
+    font-family: var(--font-body);
+    font-weight: var(--font-medium);
+    transition:
+        background-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.button-primary:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.button-primary:active {
+    transform: translateY(0);
+}
+
+.button-primary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+
+/* --- Cards --- */
+
+.card-grid {
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    margin-top: var(--space-lg);
+}
+
+.card {
+    padding: var(--space-xl);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    background: var(--surface-primary);
+    transition:
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-header {
+    margin-bottom: var(--space-md);
+}
+
+.card-header h3 {
+    color: var(--primary);
+}
+
+.card-body p {
+    color: var(--text-primary);
+}
+
+.card-footer {
+    margin-top: var(--space-lg);
+}
+
+.card-badge {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--text-primary);
+    font-size: 0.75rem;
+    font-weight: var(--font-semibold);
+    padding: 2px var(--space-sm);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-xs);
+}
+
+
+/* --- Footer --- */
+
+footer {
+    background-color: var(--surface-primary);
+    border-top: 1px solid var(--border-color);
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    padding-block: var(--space-lg);
+}
+
+footer a {
+    font-weight: var(--font-medium);
+    transition: color var(--transition-fast);
+}
+
+footer a:hover {
+    color: var(--primary);
 }
 
 

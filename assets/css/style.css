@@ -1,0 +1,247 @@
+/* ===================================
+   CSS RESET
+=================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* ===================================
+   FONT FACES
+=================================== */
+
+@font-face {
+    font-family: "Sora";
+    src: url("../fonts/sora/sora-400.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Sora";
+    src: url("../fonts/sora/sora-600.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Sora";
+    src: url("../fonts/sora/sora-700.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Sora";
+    src: url("../fonts/sora/sora-800.woff2") format("woff2");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Geist";
+    src: url("../fonts/geist/geist-400.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Geist";
+    src: url("../fonts/geist/geist-500.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("../fonts/jetbrains-mono/jetbrains-mono-400.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ===================================
+   DESIGN TOKENS
+=================================== */
+
+:root {
+
+    /* Brand Colors */
+
+    --primary: #1A4369;
+    --secondary: #064530;
+    --accent: #E8AB2E;
+
+    --background-primary: #F7F7ED;
+    --surface-primary: #E6EDF5;
+
+    --text-primary: #0C1324;
+    --border: #CBD5E1;
+
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --error: #AB0E0E;
+
+    --font-heading: "Sora", sans-serif;
+    --font-body: "Geist", sans-serif;
+    --font-code: "JetBrains Mono", monospace;
+
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 400ms ease;
+
+    --shadow-sm: 0 2px 4px rgba(0,0,0,.08);
+    --shadow-md: 0 8px 24px rgba(0,0,0,.10);
+    --shadow-lg: 0 16px 40px rgba(0,0,0,.15);
+
+    --container-width: 1200px;
+}
+
+
+/* ===================================
+   GLOBAL STYLES
+=================================== */
+
+body {
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-weight: var(--font-regular);
+    line-height: 1.6;
+}
+
+::selection {
+    background-color: var(--accent);
+    color: var(--background-primary);
+}
+
+
+/* ===================================
+   TYPOGRAPHY
+=================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+}
+
+h1 {
+    font-weight: var(--font-bold);
+}
+
+h2,
+h3 {
+    font-weight: var(--font-semibold);
+}
+
+code,
+pre {
+    font-family: var(--font-code);
+}
+
+
+/* ===================================
+   LAYOUT
+=================================== */
+
+.container {
+    width: min(100% - 2rem, var(--container-width));
+    margin-inline: auto;
+}
+
+
+/* ===================================
+   COMPONENTS
+=================================== */
+
+
+/* ===================================
+   UTILITIES
+=================================== */
+
+
+/* ===================================
+   RESPONSIVE
+=================================== */

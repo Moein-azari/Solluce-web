@@ -236,6 +236,49 @@ pre {
    COMPONENTS
 =================================== */
 
+header {
+    background-color: var(--background-primary);
+    border-bottom: 1px solid var(--border);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 72px;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+header nav > a {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: var(--font-bold);
+
+    color: var(--primary);
+}
+
+header ul a {
+    font-family: var(--font-body);
+    font-weight: var(--font-medium);
+
+    transition: color var(--transition-fast);
+}
+
+header ul a:hover {
+    color: var(--primary);
+}
+
+header a[aria-current="page"] {
+    color: var(--primary);
+    font-weight: var(--font-semibold);
+}
+
 
 /* ===================================
    UTILITIES

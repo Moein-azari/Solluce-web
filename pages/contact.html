@@ -9,6 +9,10 @@
     </head>
     <body>
 
+        <a href="#main-content" class="visually-hidden">
+            Skip to main content
+        </a>
+
         <!-- Header -->
         <header>
             <div class="container">
@@ -75,18 +79,18 @@
             <section class="contact-form">
                 <div class="container">
                     <h2>Send a Message</h2>
-                    <form action="#" method="post">
-                        <div>
+                    <form class="form" action="#" method="post">
+                        <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" autocomplete="name" required>
                         </div>
 
-                        <div>
+                        <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" autocomplete="email" required>
                         </div>
 
-                        <div>
+                        <div class="form-group">
                             <label for="message">Message</label>
                             <textarea
                                 id="message"
@@ -138,10 +142,33 @@
         </main>
 
         <footer>
-            <div class="container">
-                <p>&copy; 2026 Solluce. All rights reserved.</p>
-                <a href="https://github.com/Moein-azari/Solluce-web" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="contact.html">Contact</a>
+            <div class="container footer-grid">
+
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-logo">Solluce</a>
+                    <p>Practical software tools powered by automation and artificial intelligence.</p>
+                </div>
+
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="footer-social">
+                    <a href="https://github.com/Moein-azari/Solluce-web" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>&copy; 2026 Solluce. All rights reserved.</p>
+                </div>
             </div>
         </footer>
 
